@@ -1,0 +1,410 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "EV-Api",
+        "_postman_id": "c83ef37e-aaf3-4f42-851f-a06c68671feb",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Companies",
+            "description": "",
+            "item": [
+                {
+                    "name": "Show companies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/companies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/companies"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"company\":11}"
+                        },
+                        "description": "List all companies",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Company 1\",\n            \"_lft\": 1,\n            \"_rgt\": 4,\n            \"parent_id\": null,\n            \"descendants\": [\n                {\n                    \"id\": 5,\n                    \"name\": null,\n                    \"_lft\": 2,\n                    \"_rgt\": 3,\n                    \"parent_id\": 1\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Company 2\",\n            \"_lft\": 5,\n            \"_rgt\": 6,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Company 3\",\n            \"_lft\": 7,\n            \"_rgt\": 8,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Company 4\",\n            \"_lft\": 9,\n            \"_rgt\": 10,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": null,\n            \"_lft\": 2,\n            \"_rgt\": 3,\n            \"parent_id\": 1,\n            \"descendants\": []\n        }\n    ]\n}\n",
+                            "name": "Response for companies"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create companies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/companies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/companies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"epkfcaomhd\",\"company\":4}"
+                        },
+                        "description": "List all companies",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Company 1\",\n            \"_lft\": 1,\n            \"_rgt\": 4,\n            \"parent_id\": null,\n            \"descendants\": [\n                {\n                    \"id\": 5,\n                    \"name\": null,\n                    \"_lft\": 2,\n                    \"_rgt\": 3,\n                    \"parent_id\": 1\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Company 2\",\n            \"_lft\": 5,\n            \"_rgt\": 6,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Company 3\",\n            \"_lft\": 7,\n            \"_rgt\": 8,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Company 4\",\n            \"_lft\": 9,\n            \"_rgt\": 10,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": null,\n            \"_lft\": 2,\n            \"_rgt\": 3,\n            \"parent_id\": 1,\n            \"descendants\": []\n        }\n    ]\n}\n",
+                            "name": "Response for companies"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update companies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/companies\/:company_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/companies\/:company_id",
+                            "variable": [
+                                {
+                                    "id": "company_id",
+                                    "key": "company_id",
+                                    "value": "9",
+                                    "description": "The ID of the company."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ykzigxjycebudgejfk\",\"add_company\":6}"
+                        },
+                        "description": "Add a parent to a company use parent_company parameter.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Company 1\",\n            \"_lft\": 1,\n            \"_rgt\": 4,\n            \"parent_id\": null,\n            \"descendants\": [\n                {\n                    \"id\": 5,\n                    \"name\": null,\n                    \"_lft\": 2,\n                    \"_rgt\": 3,\n                    \"parent_id\": 1\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Company 2\",\n            \"_lft\": 5,\n            \"_rgt\": 6,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Company 3\",\n            \"_lft\": 7,\n            \"_rgt\": 8,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Company 4\",\n            \"_lft\": 9,\n            \"_rgt\": 10,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": null,\n            \"_lft\": 2,\n            \"_rgt\": 3,\n            \"parent_id\": 1,\n            \"descendants\": []\n        }\n    ]\n}\n",
+                            "name": "Response for companies"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/companies\/:company_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/companies\/:company_id",
+                            "variable": [
+                                {
+                                    "id": "company_id",
+                                    "key": "company_id",
+                                    "value": "9",
+                                    "description": "The ID of the company."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Delete companies",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Company 1\",\n            \"_lft\": 1,\n            \"_rgt\": 4,\n            \"parent_id\": null,\n            \"descendants\": [\n                {\n                    \"id\": 5,\n                    \"name\": null,\n                    \"_lft\": 2,\n                    \"_rgt\": 3,\n                    \"parent_id\": 1\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Company 2\",\n            \"_lft\": 5,\n            \"_rgt\": 6,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Company 3\",\n            \"_lft\": 7,\n            \"_rgt\": 8,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Company 4\",\n            \"_lft\": 9,\n            \"_rgt\": 10,\n            \"parent_id\": null,\n            \"descendants\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": null,\n            \"_lft\": 2,\n            \"_rgt\": 3,\n            \"parent_id\": 1,\n            \"descendants\": []\n        }\n    ]\n}\n",
+                            "name": "Response for companies"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Stations",
+            "description": "",
+            "item": [
+                {
+                    "name": "Task 3. Show stations and filter by lat\/long point distance of nearby points",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stations",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stations"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"latitude\":17086.93665,\"longitude\":282.7630914,\"distance_km\":15,\"company\":12}"
+                        },
+                        "description": "List all stations",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Buftea\",\n            \"address\": \"Bucharest\",\n            \"latitude\": \"25.93468246\",\n            \"longitude\": \"44.560715262\",\n            \"company\": {\n                \"id\": 1,\n                \"name\": \"Company 1\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ploiesti\",\n            \"address\": \"dtrqlls\",\n            \"latitude\": \"26.50256857\",\n            \"longitude\": \"44.462349742\",\n            \"company\": {\n                \"id\": 2,\n                \"name\": \"Company 2\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"last\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\/\/localhost\/api\/v1\/stations\/1\",\n        \"per_page\": 15,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
+                            "name": "List stations"
+                        }
+                    ]
+                },
+                {
+                    "name": "Task 3. Show stations and filter by lat\/long point distance of nearby points",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stations\/:company",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stations\/:company",
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"latitude\":341551.5267,\"longitude\":7216.9545,\"distance_km\":15,\"company\":6}"
+                        },
+                        "description": "List all stations",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Buftea\",\n            \"address\": \"Bucharest\",\n            \"latitude\": \"25.93468246\",\n            \"longitude\": \"44.560715262\",\n            \"company\": {\n                \"id\": 1,\n                \"name\": \"Company 1\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ploiesti\",\n            \"address\": \"dtrqlls\",\n            \"latitude\": \"26.50256857\",\n            \"longitude\": \"44.462349742\",\n            \"company\": {\n                \"id\": 2,\n                \"name\": \"Company 2\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"last\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\/\/localhost\/api\/v1\/stations\/1\",\n        \"per_page\": 15,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
+                            "name": "List stations"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create stations",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stations",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stations"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"hcuirlpponulfqt\",\"address\":\"dnzmivrapkhltgjlhhqqzmq\",\"company\":5,\"latitude\":16875940.961,\"longitude\":10283773}"
+                        },
+                        "description": "List all stations",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Buftea\",\n            \"address\": \"Bucharest\",\n            \"latitude\": \"25.93468246\",\n            \"longitude\": \"44.560715262\",\n            \"company\": {\n                \"id\": 1,\n                \"name\": \"Company 1\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ploiesti\",\n            \"address\": \"dtrqlls\",\n            \"latitude\": \"26.50256857\",\n            \"longitude\": \"44.462349742\",\n            \"company\": {\n                \"id\": 2,\n                \"name\": \"Company 2\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"last\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\/\/localhost\/api\/v1\/stations\/1\",\n        \"per_page\": 15,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
+                            "name": "Response for stations"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update stations",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stations\/:station_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stations\/:station_id",
+                            "variable": [
+                                {
+                                    "id": "station_id",
+                                    "key": "station_id",
+                                    "value": "1",
+                                    "description": "The ID of the station."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ngacsphqjsxbshzkjwqo\",\"address\":\"orzpzrrjafhceinzfd\",\"company_id\":18,\"latitude\":8296.6264,\"longitude\":436.143}"
+                        },
+                        "description": "Add a parent to a company use parent_company parameter.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Buftea\",\n            \"address\": \"Bucharest\",\n            \"latitude\": \"25.93468246\",\n            \"longitude\": \"44.560715262\",\n            \"company\": {\n                \"id\": 1,\n                \"name\": \"Company 1\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ploiesti\",\n            \"address\": \"dtrqlls\",\n            \"latitude\": \"26.50256857\",\n            \"longitude\": \"44.462349742\",\n            \"company\": {\n                \"id\": 2,\n                \"name\": \"Company 2\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"last\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\/\/localhost\/api\/v1\/stations\/1\",\n        \"per_page\": 15,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
+                            "name": "Response for stations"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete station",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/stations\/:station_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/stations\/:station_id",
+                            "variable": [
+                                {
+                                    "id": "station_id",
+                                    "key": "station_id",
+                                    "value": "1",
+                                    "description": "The ID of the station."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Delete stations",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Buftea\",\n            \"address\": \"Bucharest\",\n            \"latitude\": \"25.93468246\",\n            \"longitude\": \"44.560715262\",\n            \"company\": {\n                \"id\": 1,\n                \"name\": \"Company 1\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ploiesti\",\n            \"address\": \"dtrqlls\",\n            \"latitude\": \"26.50256857\",\n            \"longitude\": \"44.462349742\",\n            \"company\": {\n                \"id\": 2,\n                \"name\": \"Company 2\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"last\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\/\/localhost\/api\/v1\/stations\/1?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\/\/localhost\/api\/v1\/stations\/1\",\n        \"per_page\": 15,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
+                            "name": "Response for stations"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "id": 3,
+            "name": "ceerwdadadauh33",
+            "descendants": [
+                {
+                    "id": 7,
+                    "name": "station 4"
+                },
+                {
+                    "id": 8,
+                    "name": "station 5"
+                },
+                {
+                    "id": 5,
+                    "name": "station 1"
+                },
+                {
+                    "id": 6,
+                    "name": "station 3"
+                }
+            ]
+        }
+    ]
+}

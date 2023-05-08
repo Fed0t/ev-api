@@ -1,0 +1,641 @@
+name: Stations
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/stations
+    metadata:
+      groupName: Stations
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Task 3. Show stations and filter by lat/long point distance of nearby points'
+      description: 'List all stations'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      latitude:
+        name: latitude
+        description: ''
+        required: false
+        example: 17086.93665
+        type: number
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: false
+        example: 282.7630914
+        type: number
+        custom: []
+      distance_km:
+        name: distance_km
+        description: ''
+        required: false
+        example: 15
+        type: integer
+        custom: []
+      company:
+        name: company
+        description: ''
+        required: false
+        example: 12
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      latitude: 17086.93665
+      longitude: 282.7630914
+      distance_km: 15
+      company: 12
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 3,
+                      "name": "Buftea",
+                      "address": "Bucharest",
+                      "latitude": "25.93468246",
+                      "longitude": "44.560715262",
+                      "company": {
+                          "id": 1,
+                          "name": "Company 1"
+                      }
+                  },
+                  {
+                      "id": 5,
+                      "name": "Ploiesti",
+                      "address": "dtrqlls",
+                      "latitude": "26.50256857",
+                      "longitude": "44.462349742",
+                      "company": {
+                          "id": 2,
+                          "name": "Company 2"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "http://localhost/api/v1/stations/1?page=1",
+                  "last": "http://localhost/api/v1/stations/1?page=1",
+                  "prev": null,
+                  "next": null
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 1,
+                  "links": [
+                      {
+                          "url": null,
+                          "label": "&laquo; Previous",
+                          "active": false
+                      },
+                      {
+                          "url": "http://localhost/api/v1/stations/1?page=1",
+                          "label": "1",
+                          "active": true
+                      },
+                      {
+                          "url": null,
+                          "label": "Next &raquo;",
+                          "active": false
+                      }
+                  ],
+                  "path": "http://localhost/api/v1/stations/1",
+                  "per_page": 15,
+                  "to": 2,
+                  "total": 2
+              }
+          }
+        headers: []
+        description: 'List stations'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/stations/{company}'
+    metadata:
+      groupName: Stations
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Task 3. Show stations and filter by lat/long point distance of nearby points'
+      description: 'List all stations'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      company:
+        name: company
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      company: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      latitude:
+        name: latitude
+        description: ''
+        required: false
+        example: 341551.5267
+        type: number
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: false
+        example: 7216.9545
+        type: number
+        custom: []
+      distance_km:
+        name: distance_km
+        description: ''
+        required: false
+        example: 15
+        type: integer
+        custom: []
+      company:
+        name: company
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      latitude: 341551.5267
+      longitude: 7216.9545
+      distance_km: 15
+      company: 6
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 3,
+                      "name": "Buftea",
+                      "address": "Bucharest",
+                      "latitude": "25.93468246",
+                      "longitude": "44.560715262",
+                      "company": {
+                          "id": 1,
+                          "name": "Company 1"
+                      }
+                  },
+                  {
+                      "id": 5,
+                      "name": "Ploiesti",
+                      "address": "dtrqlls",
+                      "latitude": "26.50256857",
+                      "longitude": "44.462349742",
+                      "company": {
+                          "id": 2,
+                          "name": "Company 2"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "http://localhost/api/v1/stations/1?page=1",
+                  "last": "http://localhost/api/v1/stations/1?page=1",
+                  "prev": null,
+                  "next": null
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 1,
+                  "links": [
+                      {
+                          "url": null,
+                          "label": "&laquo; Previous",
+                          "active": false
+                      },
+                      {
+                          "url": "http://localhost/api/v1/stations/1?page=1",
+                          "label": "1",
+                          "active": true
+                      },
+                      {
+                          "url": null,
+                          "label": "Next &raquo;",
+                          "active": false
+                      }
+                  ],
+                  "path": "http://localhost/api/v1/stations/1",
+                  "per_page": 15,
+                  "to": 2,
+                  "total": 2
+              }
+          }
+        headers: []
+        description: 'List stations'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/stations
+    metadata:
+      groupName: Stations
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create stations'
+      description: 'List all stations'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: hcuirlpponulfqt
+        type: string
+        custom: []
+      address:
+        name: address
+        description: 'Must not be greater than 300 characters.'
+        required: true
+        example: dnzmivrapkhltgjlhhqqzmq
+        type: string
+        custom: []
+      company:
+        name: company
+        description: ''
+        required: false
+        example: 5
+        type: integer
+        custom: []
+      latitude:
+        name: latitude
+        description: ''
+        required: false
+        example: 16875940.961
+        type: number
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: false
+        example: 10283773.0
+        type: number
+        custom: []
+    cleanBodyParameters:
+      name: hcuirlpponulfqt
+      address: dnzmivrapkhltgjlhhqqzmq
+      company: 5
+      latitude: 16875940.961
+      longitude: 10283773.0
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 3,
+                      "name": "Buftea",
+                      "address": "Bucharest",
+                      "latitude": "25.93468246",
+                      "longitude": "44.560715262",
+                      "company": {
+                          "id": 1,
+                          "name": "Company 1"
+                      }
+                  },
+                  {
+                      "id": 5,
+                      "name": "Ploiesti",
+                      "address": "dtrqlls",
+                      "latitude": "26.50256857",
+                      "longitude": "44.462349742",
+                      "company": {
+                          "id": 2,
+                          "name": "Company 2"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "http://localhost/api/v1/stations/1?page=1",
+                  "last": "http://localhost/api/v1/stations/1?page=1",
+                  "prev": null,
+                  "next": null
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 1,
+                  "links": [
+                      {
+                          "url": null,
+                          "label": "&laquo; Previous",
+                          "active": false
+                      },
+                      {
+                          "url": "http://localhost/api/v1/stations/1?page=1",
+                          "label": "1",
+                          "active": true
+                      },
+                      {
+                          "url": null,
+                          "label": "Next &raquo;",
+                          "active": false
+                      }
+                  ],
+                  "path": "http://localhost/api/v1/stations/1",
+                  "per_page": 15,
+                  "to": 2,
+                  "total": 2
+              }
+          }
+        headers: []
+        description: 'Response for stations'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/stations/{station_id}'
+    metadata:
+      groupName: Stations
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update stations'
+      description: 'Add a parent to a company use parent_company parameter.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      station_id:
+        name: station_id
+        description: 'The ID of the station.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      station_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: ngacsphqjsxbshzkjwqo
+        type: string
+        custom: []
+      address:
+        name: address
+        description: 'Must not be greater than 300 characters.'
+        required: false
+        example: orzpzrrjafhceinzfd
+        type: string
+        custom: []
+      company_id:
+        name: company_id
+        description: ''
+        required: false
+        example: 18
+        type: integer
+        custom: []
+      latitude:
+        name: latitude
+        description: ''
+        required: false
+        example: 8296.6264
+        type: number
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: false
+        example: 436.143
+        type: number
+        custom: []
+    cleanBodyParameters:
+      name: ngacsphqjsxbshzkjwqo
+      address: orzpzrrjafhceinzfd
+      company_id: 18
+      latitude: 8296.6264
+      longitude: 436.143
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 3,
+                      "name": "Buftea",
+                      "address": "Bucharest",
+                      "latitude": "25.93468246",
+                      "longitude": "44.560715262",
+                      "company": {
+                          "id": 1,
+                          "name": "Company 1"
+                      }
+                  },
+                  {
+                      "id": 5,
+                      "name": "Ploiesti",
+                      "address": "dtrqlls",
+                      "latitude": "26.50256857",
+                      "longitude": "44.462349742",
+                      "company": {
+                          "id": 2,
+                          "name": "Company 2"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "http://localhost/api/v1/stations/1?page=1",
+                  "last": "http://localhost/api/v1/stations/1?page=1",
+                  "prev": null,
+                  "next": null
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 1,
+                  "links": [
+                      {
+                          "url": null,
+                          "label": "&laquo; Previous",
+                          "active": false
+                      },
+                      {
+                          "url": "http://localhost/api/v1/stations/1?page=1",
+                          "label": "1",
+                          "active": true
+                      },
+                      {
+                          "url": null,
+                          "label": "Next &raquo;",
+                          "active": false
+                      }
+                  ],
+                  "path": "http://localhost/api/v1/stations/1",
+                  "per_page": 15,
+                  "to": 2,
+                  "total": 2
+              }
+          }
+        headers: []
+        description: 'Response for stations'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/stations/{station_id}'
+    metadata:
+      groupName: Stations
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete station'
+      description: 'Delete stations'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      station_id:
+        name: station_id
+        description: 'The ID of the station.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      station_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 3,
+                      "name": "Buftea",
+                      "address": "Bucharest",
+                      "latitude": "25.93468246",
+                      "longitude": "44.560715262",
+                      "company": {
+                          "id": 1,
+                          "name": "Company 1"
+                      }
+                  },
+                  {
+                      "id": 5,
+                      "name": "Ploiesti",
+                      "address": "dtrqlls",
+                      "latitude": "26.50256857",
+                      "longitude": "44.462349742",
+                      "company": {
+                          "id": 2,
+                          "name": "Company 2"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "http://localhost/api/v1/stations/1?page=1",
+                  "last": "http://localhost/api/v1/stations/1?page=1",
+                  "prev": null,
+                  "next": null
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 1,
+                  "links": [
+                      {
+                          "url": null,
+                          "label": "&laquo; Previous",
+                          "active": false
+                      },
+                      {
+                          "url": "http://localhost/api/v1/stations/1?page=1",
+                          "label": "1",
+                          "active": true
+                      },
+                      {
+                          "url": null,
+                          "label": "Next &raquo;",
+                          "active": false
+                      }
+                  ],
+                  "path": "http://localhost/api/v1/stations/1",
+                  "per_page": 15,
+                  "to": 2,
+                  "total": 2
+              }
+          }
+        headers: []
+        description: 'Response for stations'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

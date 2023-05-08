@@ -1,0 +1,1666 @@
+openapi: 3.0.3
+info:
+  title: EV-Api
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/companies:
+    get:
+      summary: 'Show companies'
+      operationId: showCompanies
+      description: 'List all companies'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for companies'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Company 1'
+                      _lft: 1
+                      _rgt: 4
+                      parent_id: null
+                      descendants:
+                        -
+                          id: 5
+                          name: null
+                          _lft: 2
+                          _rgt: 3
+                          parent_id: 1
+                    -
+                      id: 2
+                      name: 'Company 2'
+                      _lft: 5
+                      _rgt: 6
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 3
+                      name: 'Company 3'
+                      _lft: 7
+                      _rgt: 8
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 4
+                      name: 'Company 4'
+                      _lft: 9
+                      _rgt: 10
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 5
+                      name: null
+                      _lft: 2
+                      _rgt: 3
+                      parent_id: 1
+                      descendants: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Company 1'
+                        _lft: 1
+                        _rgt: 4
+                        parent_id: null
+                        descendants:
+                          -
+                            id: 5
+                            name: null
+                            _lft: 2
+                            _rgt: 3
+                            parent_id: 1
+                      -
+                        id: 2
+                        name: 'Company 2'
+                        _lft: 5
+                        _rgt: 6
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 3
+                        name: 'Company 3'
+                        _lft: 7
+                        _rgt: 8
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 4
+                        name: 'Company 4'
+                        _lft: 9
+                        _rgt: 10
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 5
+                        name: null
+                        _lft: 2
+                        _rgt: 3
+                        parent_id: 1
+                        descendants: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Company 1'
+                        _lft:
+                          type: integer
+                          example: 1
+                        _rgt:
+                          type: integer
+                          example: 4
+                        parent_id:
+                          type: string
+                          example: null
+                        descendants:
+                          type: array
+                          example:
+                            -
+                              id: 5
+                              name: null
+                              _lft: 2
+                              _rgt: 3
+                              parent_id: 1
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 5
+                              name:
+                                type: string
+                                example: null
+                              _lft:
+                                type: integer
+                                example: 2
+                              _rgt:
+                                type: integer
+                                example: 3
+                              parent_id:
+                                type: integer
+                                example: 1
+      tags:
+        - Companies
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company:
+                  type: integer
+                  description: ''
+                  example: 11
+      security: []
+    post:
+      summary: 'Create companies'
+      operationId: createCompanies
+      description: 'List all companies'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for companies'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Company 1'
+                      _lft: 1
+                      _rgt: 4
+                      parent_id: null
+                      descendants:
+                        -
+                          id: 5
+                          name: null
+                          _lft: 2
+                          _rgt: 3
+                          parent_id: 1
+                    -
+                      id: 2
+                      name: 'Company 2'
+                      _lft: 5
+                      _rgt: 6
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 3
+                      name: 'Company 3'
+                      _lft: 7
+                      _rgt: 8
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 4
+                      name: 'Company 4'
+                      _lft: 9
+                      _rgt: 10
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 5
+                      name: null
+                      _lft: 2
+                      _rgt: 3
+                      parent_id: 1
+                      descendants: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Company 1'
+                        _lft: 1
+                        _rgt: 4
+                        parent_id: null
+                        descendants:
+                          -
+                            id: 5
+                            name: null
+                            _lft: 2
+                            _rgt: 3
+                            parent_id: 1
+                      -
+                        id: 2
+                        name: 'Company 2'
+                        _lft: 5
+                        _rgt: 6
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 3
+                        name: 'Company 3'
+                        _lft: 7
+                        _rgt: 8
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 4
+                        name: 'Company 4'
+                        _lft: 9
+                        _rgt: 10
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 5
+                        name: null
+                        _lft: 2
+                        _rgt: 3
+                        parent_id: 1
+                        descendants: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Company 1'
+                        _lft:
+                          type: integer
+                          example: 1
+                        _rgt:
+                          type: integer
+                          example: 4
+                        parent_id:
+                          type: string
+                          example: null
+                        descendants:
+                          type: array
+                          example:
+                            -
+                              id: 5
+                              name: null
+                              _lft: 2
+                              _rgt: 3
+                              parent_id: 1
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 5
+                              name:
+                                type: string
+                                example: null
+                              _lft:
+                                type: integer
+                                example: 2
+                              _rgt:
+                                type: integer
+                                example: 3
+                              parent_id:
+                                type: integer
+                                example: 1
+      tags:
+        - Companies
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: epkfcaomhd
+                company:
+                  type: integer
+                  description: ''
+                  example: 4
+              required:
+                - name
+      security: []
+  '/api/v1/companies/{company_id}':
+    put:
+      summary: 'Update companies'
+      operationId: updateCompanies
+      description: 'Add a parent to a company use parent_company parameter.'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for companies'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Company 1'
+                      _lft: 1
+                      _rgt: 4
+                      parent_id: null
+                      descendants:
+                        -
+                          id: 5
+                          name: null
+                          _lft: 2
+                          _rgt: 3
+                          parent_id: 1
+                    -
+                      id: 2
+                      name: 'Company 2'
+                      _lft: 5
+                      _rgt: 6
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 3
+                      name: 'Company 3'
+                      _lft: 7
+                      _rgt: 8
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 4
+                      name: 'Company 4'
+                      _lft: 9
+                      _rgt: 10
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 5
+                      name: null
+                      _lft: 2
+                      _rgt: 3
+                      parent_id: 1
+                      descendants: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Company 1'
+                        _lft: 1
+                        _rgt: 4
+                        parent_id: null
+                        descendants:
+                          -
+                            id: 5
+                            name: null
+                            _lft: 2
+                            _rgt: 3
+                            parent_id: 1
+                      -
+                        id: 2
+                        name: 'Company 2'
+                        _lft: 5
+                        _rgt: 6
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 3
+                        name: 'Company 3'
+                        _lft: 7
+                        _rgt: 8
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 4
+                        name: 'Company 4'
+                        _lft: 9
+                        _rgt: 10
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 5
+                        name: null
+                        _lft: 2
+                        _rgt: 3
+                        parent_id: 1
+                        descendants: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Company 1'
+                        _lft:
+                          type: integer
+                          example: 1
+                        _rgt:
+                          type: integer
+                          example: 4
+                        parent_id:
+                          type: string
+                          example: null
+                        descendants:
+                          type: array
+                          example:
+                            -
+                              id: 5
+                              name: null
+                              _lft: 2
+                              _rgt: 3
+                              parent_id: 1
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 5
+                              name:
+                                type: string
+                                example: null
+                              _lft:
+                                type: integer
+                                example: 2
+                              _rgt:
+                                type: integer
+                                example: 3
+                              parent_id:
+                                type: integer
+                                example: 1
+      tags:
+        - Companies
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ykzigxjycebudgejfk
+                add_company:
+                  type: integer
+                  description: ''
+                  example: 6
+      security: []
+    delete:
+      summary: 'Delete company'
+      operationId: deleteCompany
+      description: 'Delete companies'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for companies'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Company 1'
+                      _lft: 1
+                      _rgt: 4
+                      parent_id: null
+                      descendants:
+                        -
+                          id: 5
+                          name: null
+                          _lft: 2
+                          _rgt: 3
+                          parent_id: 1
+                    -
+                      id: 2
+                      name: 'Company 2'
+                      _lft: 5
+                      _rgt: 6
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 3
+                      name: 'Company 3'
+                      _lft: 7
+                      _rgt: 8
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 4
+                      name: 'Company 4'
+                      _lft: 9
+                      _rgt: 10
+                      parent_id: null
+                      descendants: []
+                    -
+                      id: 5
+                      name: null
+                      _lft: 2
+                      _rgt: 3
+                      parent_id: 1
+                      descendants: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Company 1'
+                        _lft: 1
+                        _rgt: 4
+                        parent_id: null
+                        descendants:
+                          -
+                            id: 5
+                            name: null
+                            _lft: 2
+                            _rgt: 3
+                            parent_id: 1
+                      -
+                        id: 2
+                        name: 'Company 2'
+                        _lft: 5
+                        _rgt: 6
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 3
+                        name: 'Company 3'
+                        _lft: 7
+                        _rgt: 8
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 4
+                        name: 'Company 4'
+                        _lft: 9
+                        _rgt: 10
+                        parent_id: null
+                        descendants: []
+                      -
+                        id: 5
+                        name: null
+                        _lft: 2
+                        _rgt: 3
+                        parent_id: 1
+                        descendants: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Company 1'
+                        _lft:
+                          type: integer
+                          example: 1
+                        _rgt:
+                          type: integer
+                          example: 4
+                        parent_id:
+                          type: string
+                          example: null
+                        descendants:
+                          type: array
+                          example:
+                            -
+                              id: 5
+                              name: null
+                              _lft: 2
+                              _rgt: 3
+                              parent_id: 1
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 5
+                              name:
+                                type: string
+                                example: null
+                              _lft:
+                                type: integer
+                                example: 2
+                              _rgt:
+                                type: integer
+                                example: 3
+                              parent_id:
+                                type: integer
+                                example: 1
+      tags:
+        - Companies
+      security: []
+    parameters:
+      -
+        in: path
+        name: company_id
+        description: 'The ID of the company.'
+        example: 9
+        required: true
+        schema:
+          type: integer
+  /api/v1/stations:
+    get:
+      summary: 'Task 3. Show stations and filter by lat/long point distance of nearby points'
+      operationId: task3ShowStationsAndFilterByLatlongPointDistanceOfNearbyPoints
+      description: 'List all stations'
+      parameters: []
+      responses:
+        200:
+          description: 'List stations'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 3
+                      name: Buftea
+                      address: Bucharest
+                      latitude: '25.93468246'
+                      longitude: '44.560715262'
+                      company:
+                        id: 1
+                        name: 'Company 1'
+                    -
+                      id: 5
+                      name: Ploiesti
+                      address: dtrqlls
+                      latitude: '26.50256857'
+                      longitude: '44.462349742'
+                      company:
+                        id: 2
+                        name: 'Company 2'
+                  links:
+                    first: 'http://localhost/api/v1/stations/1?page=1'
+                    last: 'http://localhost/api/v1/stations/1?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/stations/1?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/v1/stations/1'
+                    per_page: 15
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: Buftea
+                        address: Bucharest
+                        latitude: '25.93468246'
+                        longitude: '44.560715262'
+                        company:
+                          id: 1
+                          name: 'Company 1'
+                      -
+                        id: 5
+                        name: Ploiesti
+                        address: dtrqlls
+                        latitude: '26.50256857'
+                        longitude: '44.462349742'
+                        company:
+                          id: 2
+                          name: 'Company 2'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Buftea
+                        address:
+                          type: string
+                          example: Bucharest
+                        latitude:
+                          type: string
+                          example: '25.93468246'
+                        longitude:
+                          type: string
+                          example: '44.560715262'
+                        company:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Company 1'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/v1/stations/1?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - Stations
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                latitude:
+                  type: number
+                  description: ''
+                  example: 17086.93665
+                longitude:
+                  type: number
+                  description: ''
+                  example: 282.7630914
+                distance_km:
+                  type: integer
+                  description: ''
+                  example: 15
+                company:
+                  type: integer
+                  description: ''
+                  example: 12
+      security: []
+    post:
+      summary: 'Create stations'
+      operationId: createStations
+      description: 'List all stations'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for stations'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 3
+                      name: Buftea
+                      address: Bucharest
+                      latitude: '25.93468246'
+                      longitude: '44.560715262'
+                      company:
+                        id: 1
+                        name: 'Company 1'
+                    -
+                      id: 5
+                      name: Ploiesti
+                      address: dtrqlls
+                      latitude: '26.50256857'
+                      longitude: '44.462349742'
+                      company:
+                        id: 2
+                        name: 'Company 2'
+                  links:
+                    first: 'http://localhost/api/v1/stations/1?page=1'
+                    last: 'http://localhost/api/v1/stations/1?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/stations/1?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/v1/stations/1'
+                    per_page: 15
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: Buftea
+                        address: Bucharest
+                        latitude: '25.93468246'
+                        longitude: '44.560715262'
+                        company:
+                          id: 1
+                          name: 'Company 1'
+                      -
+                        id: 5
+                        name: Ploiesti
+                        address: dtrqlls
+                        latitude: '26.50256857'
+                        longitude: '44.462349742'
+                        company:
+                          id: 2
+                          name: 'Company 2'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Buftea
+                        address:
+                          type: string
+                          example: Bucharest
+                        latitude:
+                          type: string
+                          example: '25.93468246'
+                        longitude:
+                          type: string
+                          example: '44.560715262'
+                        company:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Company 1'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/v1/stations/1?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - Stations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: hcuirlpponulfqt
+                address:
+                  type: string
+                  description: 'Must not be greater than 300 characters.'
+                  example: dnzmivrapkhltgjlhhqqzmq
+                company:
+                  type: integer
+                  description: ''
+                  example: 5
+                latitude:
+                  type: number
+                  description: ''
+                  example: 16875940.961
+                longitude:
+                  type: number
+                  description: ''
+                  example: 10283773.0
+              required:
+                - name
+                - address
+      security: []
+  '/api/v1/stations/{company}':
+    get:
+      summary: 'Task 3. Show stations and filter by lat/long point distance of nearby points'
+      operationId: task3ShowStationsAndFilterByLatlongPointDistanceOfNearbyPoints
+      description: 'List all stations'
+      parameters: []
+      responses:
+        200:
+          description: 'List stations'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 3
+                      name: Buftea
+                      address: Bucharest
+                      latitude: '25.93468246'
+                      longitude: '44.560715262'
+                      company:
+                        id: 1
+                        name: 'Company 1'
+                    -
+                      id: 5
+                      name: Ploiesti
+                      address: dtrqlls
+                      latitude: '26.50256857'
+                      longitude: '44.462349742'
+                      company:
+                        id: 2
+                        name: 'Company 2'
+                  links:
+                    first: 'http://localhost/api/v1/stations/1?page=1'
+                    last: 'http://localhost/api/v1/stations/1?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/stations/1?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/v1/stations/1'
+                    per_page: 15
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: Buftea
+                        address: Bucharest
+                        latitude: '25.93468246'
+                        longitude: '44.560715262'
+                        company:
+                          id: 1
+                          name: 'Company 1'
+                      -
+                        id: 5
+                        name: Ploiesti
+                        address: dtrqlls
+                        latitude: '26.50256857'
+                        longitude: '44.462349742'
+                        company:
+                          id: 2
+                          name: 'Company 2'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Buftea
+                        address:
+                          type: string
+                          example: Bucharest
+                        latitude:
+                          type: string
+                          example: '25.93468246'
+                        longitude:
+                          type: string
+                          example: '44.560715262'
+                        company:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Company 1'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/v1/stations/1?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - Stations
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                latitude:
+                  type: number
+                  description: ''
+                  example: 341551.5267
+                longitude:
+                  type: number
+                  description: ''
+                  example: 7216.9545
+                distance_km:
+                  type: integer
+                  description: ''
+                  example: 15
+                company:
+                  type: integer
+                  description: ''
+                  example: 6
+      security: []
+    parameters:
+      -
+        in: path
+        name: company
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/stations/{station_id}':
+    put:
+      summary: 'Update stations'
+      operationId: updateStations
+      description: 'Add a parent to a company use parent_company parameter.'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for stations'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 3
+                      name: Buftea
+                      address: Bucharest
+                      latitude: '25.93468246'
+                      longitude: '44.560715262'
+                      company:
+                        id: 1
+                        name: 'Company 1'
+                    -
+                      id: 5
+                      name: Ploiesti
+                      address: dtrqlls
+                      latitude: '26.50256857'
+                      longitude: '44.462349742'
+                      company:
+                        id: 2
+                        name: 'Company 2'
+                  links:
+                    first: 'http://localhost/api/v1/stations/1?page=1'
+                    last: 'http://localhost/api/v1/stations/1?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/stations/1?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/v1/stations/1'
+                    per_page: 15
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: Buftea
+                        address: Bucharest
+                        latitude: '25.93468246'
+                        longitude: '44.560715262'
+                        company:
+                          id: 1
+                          name: 'Company 1'
+                      -
+                        id: 5
+                        name: Ploiesti
+                        address: dtrqlls
+                        latitude: '26.50256857'
+                        longitude: '44.462349742'
+                        company:
+                          id: 2
+                          name: 'Company 2'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Buftea
+                        address:
+                          type: string
+                          example: Bucharest
+                        latitude:
+                          type: string
+                          example: '25.93468246'
+                        longitude:
+                          type: string
+                          example: '44.560715262'
+                        company:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Company 1'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/v1/stations/1?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - Stations
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ngacsphqjsxbshzkjwqo
+                address:
+                  type: string
+                  description: 'Must not be greater than 300 characters.'
+                  example: orzpzrrjafhceinzfd
+                company_id:
+                  type: integer
+                  description: ''
+                  example: 18
+                latitude:
+                  type: number
+                  description: ''
+                  example: 8296.6264
+                longitude:
+                  type: number
+                  description: ''
+                  example: 436.143
+      security: []
+    delete:
+      summary: 'Delete station'
+      operationId: deleteStation
+      description: 'Delete stations'
+      parameters: []
+      responses:
+        200:
+          description: 'Response for stations'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 3
+                      name: Buftea
+                      address: Bucharest
+                      latitude: '25.93468246'
+                      longitude: '44.560715262'
+                      company:
+                        id: 1
+                        name: 'Company 1'
+                    -
+                      id: 5
+                      name: Ploiesti
+                      address: dtrqlls
+                      latitude: '26.50256857'
+                      longitude: '44.462349742'
+                      company:
+                        id: 2
+                        name: 'Company 2'
+                  links:
+                    first: 'http://localhost/api/v1/stations/1?page=1'
+                    last: 'http://localhost/api/v1/stations/1?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/stations/1?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/v1/stations/1'
+                    per_page: 15
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: Buftea
+                        address: Bucharest
+                        latitude: '25.93468246'
+                        longitude: '44.560715262'
+                        company:
+                          id: 1
+                          name: 'Company 1'
+                      -
+                        id: 5
+                        name: Ploiesti
+                        address: dtrqlls
+                        latitude: '26.50256857'
+                        longitude: '44.462349742'
+                        company:
+                          id: 2
+                          name: 'Company 2'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Buftea
+                        address:
+                          type: string
+                          example: Bucharest
+                        latitude:
+                          type: string
+                          example: '25.93468246'
+                        longitude:
+                          type: string
+                          example: '44.560715262'
+                        company:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Company 1'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/v1/stations/1?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/v1/stations/1'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - Stations
+      security: []
+    parameters:
+      -
+        in: path
+        name: station_id
+        description: 'The ID of the station.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Companies
+    description: ''
+  -
+    name: Stations
+    description: ''

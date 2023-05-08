@@ -1,0 +1,411 @@
+name: Companies
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/companies
+    metadata:
+      groupName: Companies
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show companies'
+      description: 'List all companies'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      company:
+        name: company
+        description: ''
+        required: false
+        example: 11
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      company: 11
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "name": "Company 1",
+                      "_lft": 1,
+                      "_rgt": 4,
+                      "parent_id": null,
+                      "descendants": [
+                          {
+                              "id": 5,
+                              "name": null,
+                              "_lft": 2,
+                              "_rgt": 3,
+                              "parent_id": 1
+                          }
+                      ]
+                  },
+                  {
+                      "id": 2,
+                      "name": "Company 2",
+                      "_lft": 5,
+                      "_rgt": 6,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 3,
+                      "name": "Company 3",
+                      "_lft": 7,
+                      "_rgt": 8,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 4,
+                      "name": "Company 4",
+                      "_lft": 9,
+                      "_rgt": 10,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 5,
+                      "name": null,
+                      "_lft": 2,
+                      "_rgt": 3,
+                      "parent_id": 1,
+                      "descendants": []
+                  }
+              ]
+          }
+        headers: []
+        description: 'Response for companies'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/companies
+    metadata:
+      groupName: Companies
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create companies'
+      description: 'List all companies'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: epkfcaomhd
+        type: string
+        custom: []
+      company:
+        name: company
+        description: ''
+        required: false
+        example: 4
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: epkfcaomhd
+      company: 4
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "name": "Company 1",
+                      "_lft": 1,
+                      "_rgt": 4,
+                      "parent_id": null,
+                      "descendants": [
+                          {
+                              "id": 5,
+                              "name": null,
+                              "_lft": 2,
+                              "_rgt": 3,
+                              "parent_id": 1
+                          }
+                      ]
+                  },
+                  {
+                      "id": 2,
+                      "name": "Company 2",
+                      "_lft": 5,
+                      "_rgt": 6,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 3,
+                      "name": "Company 3",
+                      "_lft": 7,
+                      "_rgt": 8,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 4,
+                      "name": "Company 4",
+                      "_lft": 9,
+                      "_rgt": 10,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 5,
+                      "name": null,
+                      "_lft": 2,
+                      "_rgt": 3,
+                      "parent_id": 1,
+                      "descendants": []
+                  }
+              ]
+          }
+        headers: []
+        description: 'Response for companies'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/companies/{company_id}'
+    metadata:
+      groupName: Companies
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update companies'
+      description: 'Add a parent to a company use parent_company parameter.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      company_id:
+        name: company_id
+        description: 'The ID of the company.'
+        required: true
+        example: 9
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      company_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: ykzigxjycebudgejfk
+        type: string
+        custom: []
+      add_company:
+        name: add_company
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: ykzigxjycebudgejfk
+      add_company: 6
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "name": "Company 1",
+                      "_lft": 1,
+                      "_rgt": 4,
+                      "parent_id": null,
+                      "descendants": [
+                          {
+                              "id": 5,
+                              "name": null,
+                              "_lft": 2,
+                              "_rgt": 3,
+                              "parent_id": 1
+                          }
+                      ]
+                  },
+                  {
+                      "id": 2,
+                      "name": "Company 2",
+                      "_lft": 5,
+                      "_rgt": 6,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 3,
+                      "name": "Company 3",
+                      "_lft": 7,
+                      "_rgt": 8,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 4,
+                      "name": "Company 4",
+                      "_lft": 9,
+                      "_rgt": 10,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 5,
+                      "name": null,
+                      "_lft": 2,
+                      "_rgt": 3,
+                      "parent_id": 1,
+                      "descendants": []
+                  }
+              ]
+          }
+        headers: []
+        description: 'Response for companies'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/companies/{company_id}'
+    metadata:
+      groupName: Companies
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete company'
+      description: 'Delete companies'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      company_id:
+        name: company_id
+        description: 'The ID of the company.'
+        required: true
+        example: 9
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      company_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "name": "Company 1",
+                      "_lft": 1,
+                      "_rgt": 4,
+                      "parent_id": null,
+                      "descendants": [
+                          {
+                              "id": 5,
+                              "name": null,
+                              "_lft": 2,
+                              "_rgt": 3,
+                              "parent_id": 1
+                          }
+                      ]
+                  },
+                  {
+                      "id": 2,
+                      "name": "Company 2",
+                      "_lft": 5,
+                      "_rgt": 6,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 3,
+                      "name": "Company 3",
+                      "_lft": 7,
+                      "_rgt": 8,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 4,
+                      "name": "Company 4",
+                      "_lft": 9,
+                      "_rgt": 10,
+                      "parent_id": null,
+                      "descendants": []
+                  },
+                  {
+                      "id": 5,
+                      "name": null,
+                      "_lft": 2,
+                      "_rgt": 3,
+                      "parent_id": 1,
+                      "descendants": []
+                  }
+              ]
+          }
+        headers: []
+        description: 'Response for companies'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,49 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bucharest Center",
+                "address": "Bucharest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [2.2944960089681175, 48.85824068679814]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bucharest South",
+                "address": "Bucharest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-74.04455265662958, 40.68928126997774]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bucharest North",
+                "address": "Bucharest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12.492283213388305, 41.890266877448695]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bucharest East",
+                "address": "Bucharest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [2.0895860296820206, 6.324244153348859]
+            }
+        }
+    ]
+}
