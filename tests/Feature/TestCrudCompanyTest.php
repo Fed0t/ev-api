@@ -33,7 +33,6 @@ class TestCrudCompanyTest extends TestCase
     {
         $data = [
             'name' => 'Test Company',
-            'address' => 'Company charger nr 1',
         ];
 
         $response = $this->postJson('/api/v1/companies', $data);
@@ -55,7 +54,6 @@ class TestCrudCompanyTest extends TestCase
         $data = [
             'name' => 'Test Company',
             'address' => 'Company charger nr 1',
-            'add_company' => $company->id
         ];
 
         $response = $this->putJson('/api/v1/companies/'.$company->id, $data);
@@ -63,6 +61,75 @@ class TestCrudCompanyTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function addChildNodeTest()
+    {
+        $leftRight = Company::getLeftRight();
+        $company = Company::factory()->create([
+            'name' => $this->faker->name(),
+            'left' => $leftRight['left'],
+            'right' => $leftRight['right'],
+        ]);
+
+        $leftRight = Company::getLeftRight();
+        $company2 = Company::factory()->create([
+            'name' => $this->faker->name(),
+            'left' => $leftRight['left'],
+            'right' => $leftRight['right'],
+        ]);
+
+        $leftRight = Company::getLeftRight();
+        $company3 = Company::factory()->create([
+            'name' => $this->faker->name(),
+            'left' => $leftRight['left'],
+            'right' => $leftRight['right'],
+        ]);
+        $data = [
+            'add_company' => $company2->id,
+        ];
+        $response = $this->putJson('/api/v1/companies/'.$company->id, $data);
+        $data = [
+            'add_company' => $company3->id,
+        ];
+
+        $response = $this->putJson('/api/v1/companies/'.$company2->id, $data);
+
+        $response->assertStatus(201)->assertJsonFragment([
+            'data' => [
+                [
+                    'id' => $company->id,
+                    'name' => $company->name,
+                    'descendants' => [
+                        [
+                            'id' => $company2->id,
+                            'name' => $company2->name,
+                            'descendants' => []
+                        ],
+                        [
+                            'id' => $company3->id,
+                            'name' => $company3->name,
+                            'descendants' => []
+                        ]
+                    ]
+                ],
+                [
+                    'id' => $company2->id,
+                    'name' => $company2->name,
+                    'descendants' => [
+                        [
+                            'id' => $company3->id,
+                            'name' => $company3->name,
+                            'descendants' => []
+                        ]
+                    ]
+                ],
+                [
+                    'id' => $company3->id,
+                    'name' => $company3->name,
+                    'descendants' => []
+                ]
+            ]
+        ]);
+    }
 
     public function deleteUpdateCompany()
     {
@@ -74,7 +141,7 @@ class TestCrudCompanyTest extends TestCase
             'parent_id' => 0
         ]);
 
-        $response = $this->delete('/api/v1/companies/'.$$company->id);
+        $response = $this->delete('/api/v1/companies/'.$company->id);
 
         $response->assertStatus(201);
     }
