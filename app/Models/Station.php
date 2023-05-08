@@ -46,15 +46,10 @@ class Station extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public static function getNearby($lat, $lng, $distance = 50, $unit = 'km')
+    public static function getNearby($lat, $lng, $distance = 50)
     {
         // radius of earth; @note: the earth is not perfectly spherical, but this is considered the 'mean radius'
-        if ($unit == 'km') {
-            $radius = 6371.009;
-        } // in kilometers
-        elseif ($unit == 'mi') {
-            $radius = 3958.761;
-        } // in miles
+        $radius = 6371.009; // in kilometers
 
         // latitude boundaries
         $maxLat = (float) $lat + rad2deg($distance / $radius);
