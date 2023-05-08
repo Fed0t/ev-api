@@ -43,11 +43,6 @@ class TestCrudCompanyTest extends TestCase
 
     public function testUpdateCompany()
     {
-        $data = [
-            'name' => 'Test Company',
-            'address' => 'Company charger nr 1',
-            'add_company' => 1
-        ];
 
         $leftRight = Company::getLeftRight();
         $company = Company::factory()->create([
@@ -56,6 +51,12 @@ class TestCrudCompanyTest extends TestCase
             'right' => $leftRight['right'],
             'parent_id' => 0
         ]);
+
+        $data = [
+            'name' => 'Test Company',
+            'address' => 'Company charger nr 1',
+            'add_company' => $company->id
+        ];
 
         $response = $this->putJson('/api/v1/companies/'.$company->id, $data);
 

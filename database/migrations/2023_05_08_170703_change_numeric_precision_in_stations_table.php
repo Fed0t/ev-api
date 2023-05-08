@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('stations', function (Blueprint $table) {
-            $table->double('latitude')->change();
-            $table->double('longitude')->change();
+            $table->double('latitude')->nullable()->change();
+            $table->double('longitude')->nullable()->change();
         });
     }
 
@@ -23,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('stations', function (Blueprint $table) {
-            $table->decimal('latitude', 10, 7)->change();
-            $table->decimal('longitude', 10, 7)->change();
+            $table->decimal('latitude', 10, 7)->nullable()->change();
+            $table->decimal('longitude', 10, 7)->nullable()->change();
         });
     }
 };
