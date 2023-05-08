@@ -66,7 +66,9 @@ trait NestedSetTrait
         $this->delete();
 
         // Update left and right values of parent's descendants
-        $this->descendants()
+        $this->where('parent_id', $parentId)
+            ->where('left', '>', $left)
+            ->where('right', '<', $right)
             ->update([
                 'left' => DB::raw('CASE WHEN "left" > '.$left.' THEN "left" - 2 ELSE "left" END'),
                 'right' => DB::raw('CASE WHEN "right" > '.$left.' THEN "right" - 2 ELSE "right" END'),

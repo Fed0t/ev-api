@@ -76,4 +76,34 @@ class TestCrudStationTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+
+    public function testSearchByLatitudeLongitude()
+    {
+        $station = Station::factory()->create([
+            'name' => $this->faker->name(),
+            'latitude' => $this->faker->latitude(61, -60),
+            'longitude' => $this->faker->longitude(23, -24),
+        ]);
+
+        $data = [
+            'latitude' => $station->latitude,
+            'longitude' => $station->latitude,
+            'distance_km' => '1',
+        ];
+        $response = $this->getJson('/api/v1/stations', $data);
+
+        $response->assertStatus(200)->assertJsonFragment([
+            'data' => [
+                [
+                    'id' => $station->id,
+                    'name' => $station->name,
+                    'latitude' => (string)$station->latitude,
+                    'longitude' => (string)$station->longitude,
+                    'address' => $station->address,
+                    'company' => $station->company,
+                ]
+            ]
+        ]);
+    }
 }
