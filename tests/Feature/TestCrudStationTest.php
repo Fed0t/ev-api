@@ -4,9 +4,9 @@ namespace Tests\Feature;
 
 use App\Models\Company;
 use App\Models\Station;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
 class TestCrudStationTest extends TestCase
@@ -29,7 +29,7 @@ class TestCrudStationTest extends TestCase
     {
         $data = [
             'name' => 'Test Station',
-            'address' => 'Station charger nr 1'
+            'address' => 'Station charger nr 1',
         ];
 
         $response = $this->postJson('/api/v1/stations', $data);
@@ -37,7 +37,6 @@ class TestCrudStationTest extends TestCase
         $response->assertStatus(201)
             ->assertJsonFragment($data);
     }
-
 
     public function testUpdateStation()
     {
@@ -77,7 +76,6 @@ class TestCrudStationTest extends TestCase
         $response->assertStatus(200);
     }
 
-
     public function testSearchByLatitudeLongitude()
     {
         $station = Station::factory()->create([
@@ -98,12 +96,12 @@ class TestCrudStationTest extends TestCase
                 [
                     'id' => $station->id,
                     'name' => $station->name,
-                    'latitude' => (string)$station->latitude,
-                    'longitude' => (string)$station->longitude,
+                    'latitude' => (string) $station->latitude,
+                    'longitude' => (string) $station->longitude,
                     'address' => $station->address,
                     'company' => $station->company,
-                ]
-            ]
+                ],
+            ],
         ]);
     }
 }

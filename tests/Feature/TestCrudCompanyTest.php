@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Company;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
 class TestCrudCompanyTest extends TestCase
@@ -20,7 +20,7 @@ class TestCrudCompanyTest extends TestCase
             'name' => $this->faker->name(),
             'left' => $leftRight['left'],
             'right' => $leftRight['right'],
-            'parent_id' => 0
+            'parent_id' => 0,
         ]);
 
         $this->assertDatabaseHas('companies', [
@@ -48,7 +48,7 @@ class TestCrudCompanyTest extends TestCase
             'name' => $this->faker->name(),
             'left' => $leftRight['left'],
             'right' => $leftRight['right'],
-            'parent_id' => 0
+            'parent_id' => 0,
         ]);
 
         $data = [
@@ -102,14 +102,14 @@ class TestCrudCompanyTest extends TestCase
                         [
                             'id' => $company2->id,
                             'name' => $company2->name,
-                            'descendants' => []
+                            'descendants' => [],
                         ],
                         [
                             'id' => $company3->id,
                             'name' => $company3->name,
-                            'descendants' => []
-                        ]
-                    ]
+                            'descendants' => [],
+                        ],
+                    ],
                 ],
                 [
                     'id' => $company2->id,
@@ -118,16 +118,16 @@ class TestCrudCompanyTest extends TestCase
                         [
                             'id' => $company3->id,
                             'name' => $company3->name,
-                            'descendants' => []
-                        ]
-                    ]
+                            'descendants' => [],
+                        ],
+                    ],
                 ],
                 [
                     'id' => $company3->id,
                     'name' => $company3->name,
-                    'descendants' => []
-                ]
-            ]
+                    'descendants' => [],
+                ],
+            ],
         ]);
     }
 
@@ -138,13 +138,11 @@ class TestCrudCompanyTest extends TestCase
             'name' => $this->faker->name(),
             'left' => $leftRight['left'],
             'right' => $leftRight['right'],
-            'parent_id' => 0
+            'parent_id' => 0,
         ]);
 
         $response = $this->delete('/api/v1/companies/'.$company->id);
 
         $response->assertStatus(201);
     }
-
-
 }

@@ -7,15 +7,13 @@ use Tests\TestCase;
 
 class NestedSetTest extends TestCase
 {
-
     public function testReceivesValidValuesWhenAppendedTo()
     {
-//        $node = new Company([ 'name' => 'test' ]);
-//        $root = Company::root();
-//
-//        $root->appendNode($node);
+        //        $node = new Company([ 'name' => 'test' ]);
+        //        $root = Company::root();
+        //
+        //        $root->appendNode($node);
 
         //check if is appended
     }
-
 }

@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
-use App\Models\Company;
-use Illuminate\Http\JsonResponse;
 use App\Http\Requests\CreateCompany;
 use App\Http\Requests\ShowCompany;
 use App\Http\Requests\UpdateCompany;
 use App\Http\Resources\CompaniesResource;
 use App\Http\Resources\CompanyResource;
+use App\Models\Company;
+use Exception;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
 use Knuckles\Scribe\Attributes\Unauthenticated;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CompanyController extends Controller
 {
@@ -34,8 +34,8 @@ class CompanyController extends Controller
     public function show(ShowCompany $request): AnonymousResourceCollection
     {
         $companies = Company::when($request->company, function ($query, $company) {
-                $query->where('id', $company);
-            })->orderBy('id')->get();
+            $query->where('id', $company);
+        })->orderBy('id')->get();
 
         return CompaniesResource::collection($companies);
     }
@@ -77,7 +77,7 @@ class CompanyController extends Controller
     {
         if ($request->add_company) {
             $company->addDescendant(Company::find($request->add_company));
-        }else{
+        } else {
             $company->update($request->validated());
         }
 

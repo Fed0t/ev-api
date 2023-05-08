@@ -15,9 +15,10 @@ class GeometryPoint implements CastsAttributes
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        if($value){
+        if ($value) {
             $value = json_decode(collect(DB::select("SELECT ST_AsGeoJSON('".$value."')"))->first()->st_asgeojson);
         }
+
         return $value;
     }
 
@@ -28,6 +29,10 @@ class GeometryPoint implements CastsAttributes
      */
     public function set(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return DB::raw("ST_GeomFromGeoJSON('".json_encode($value)."')");
+        if ($value) {
+            $value = collect(DB::select("SELECT ST_GeomFromGeoJSON('".json_encode($value)."')"))->first()->st_geomfromgeojson;
+        }
+
+        return $value;
     }
 }

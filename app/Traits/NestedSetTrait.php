@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 trait NestedSetTrait
 {
-
     protected string $leftColumn = 'left';
+
     protected string $parentColumn = 'parent_id';
+
     protected string $rightColumn = 'right';
 
     /**
@@ -21,7 +22,7 @@ trait NestedSetTrait
     public function descendants(): HasMany
     {
         return $this->hasMany(self::class, $this->parentColumn)
-            ->orWhere(function($query){
+            ->orWhere(function ($query) {
                 $query->where($this->leftColumn, '>', (int) $this->{$this->leftColumn})
                     ->where($this->leftColumn, '<', (int) $this->{$this->rightColumn});
             })
@@ -41,7 +42,7 @@ trait NestedSetTrait
         $this->newQuery()->where($this->rightColumn, '>=', $this->{$this->rightColumn})
             ->increment($this->rightColumn, 2);
 
-        if(!$child->parent_id){
+        if (! $child->parent_id) {
 
             $child->{$this->leftColumn} = $this->{$this->rightColumn};
             $child->{$this->rightColumn} = $child->left + 1;
@@ -54,7 +55,6 @@ trait NestedSetTrait
 
     /**
      *  Delete descendant
-     *
      */
     public function deleteDescendant(): void
     {

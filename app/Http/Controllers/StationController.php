@@ -10,7 +10,6 @@ use App\Http\Resources\StationsResource;
 use App\Models\Company;
 use App\Models\Station;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\DB;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
@@ -97,7 +96,7 @@ class StationController extends Controller
         if ($request->latitude && $request->longitude) {
             $data['position'] = [
                 'type' => 'Point',
-                'coordinates' => [ $request->latitude, $request->longitude ],
+                'coordinates' => [$request->latitude, $request->longitude],
             ];
         }
 

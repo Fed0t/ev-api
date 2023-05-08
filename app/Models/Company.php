@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Traits\NestedSetTrait;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
@@ -28,7 +28,6 @@ class Company extends Model
 
     /**
      * Create a new company with left right boundaries
-     *
      */
     public static function newCompany($data)
     {
@@ -37,7 +36,7 @@ class Company extends Model
         return self::firstOrCreate([
             'name' => $data['name'],
             'left' => data_get($leftRight, 'left', 0),
-            'right' => data_get($leftRight, 'right', 0)
+            'right' => data_get($leftRight, 'right', 0),
         ]);
     }
 }

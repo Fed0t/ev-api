@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Casts\GeometryPoint;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -31,7 +30,6 @@ class Station extends Model
     protected $casts = [
         'position' => GeometryPoint::class,
     ];
-
 
     /**
      * Relationship with companies
