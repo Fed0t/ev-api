@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\GeometryPoint;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -23,20 +24,14 @@ class Station extends Model
 
     protected $hidden = [
         'company_id',
-        'position',
         'created_at',
         'updated_at',
     ];
 
-    /**
-     * Get position geom accessor
-     */
-    protected function position(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $value,
-        );
-    }
+    protected $casts = [
+        'position' => GeometryPoint::class,
+    ];
+
 
     /**
      * Relationship with companies

@@ -95,11 +95,10 @@ class StationController extends Controller
         $data = $request->validated();
 
         if ($request->latitude && $request->longitude) {
-            $point = [
+            $data['position'] = [
                 'type' => 'Point',
                 'coordinates' => [ $request->latitude, $request->longitude ],
             ];
-            $data['position'] = DB::raw("ST_GeomFromGeoJSON('".json_encode($point)."')");
         }
 
         $station->update($data);
